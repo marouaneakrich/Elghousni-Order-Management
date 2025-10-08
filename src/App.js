@@ -6,16 +6,14 @@ import './App.css';
 import productsData from './data/products.json';
 
 
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        </p>
-      </header>
-    </div>
-  );
-}
+const [orders, setOrders] = useState([]);
+
+const handleAddOrder = (newOrder) => {
+setOrders((prev) => [...prev, newOrder]);
+};
+};
+
 
 export default App;
