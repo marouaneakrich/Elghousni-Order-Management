@@ -67,7 +67,7 @@ src/
 │   ├── ProductsTable.jsx     # Products table
 │   └── Sidebar.jsx           # Navigation
 ├── data/
-│   └── products.js           # Product catalog
+│   └── products.json           # Product catalog
 ├── App.jsx                   # Main component
 ├── App.css                   # Global styles
 └── index.js                  # Entry point
