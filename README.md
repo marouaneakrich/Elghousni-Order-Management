@@ -3,7 +3,7 @@
 A React-based order management application for the Elghousni Cooperative, a Moroccan agricultural cooperative specializing in olive oil and local products near Tangier.
 
 ## 📋 Project Overview
-
+ 
 This is an EOM (École d'Orientation et de Métiers) project developed as part of the Web and Mobile Web Developer training program.
 
 **Project Type:** Order Management System  
