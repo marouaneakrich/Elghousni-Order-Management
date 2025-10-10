@@ -112,13 +112,9 @@ The application is organized into reusable React components:
 
 This is an educational project. Feedback and suggestions are welcome!
 
-## 📄 License
-
-MIT License
-
 ## 👤 Author
 
-**Mohamed Harbouli**  
+**Marouane Akrich**  
 EOM Student - Web and Mobile Web Developer  
 Project Created: 05/10/25
 
