@@ -1,24 +1,10 @@
 import React from "react";
 
-function StatusBadge({ status }) {
-  const colors = {
-    Pending: "#ff9500ff",
-    Prepared: "#00c3ffff",
-    Delivered: "#00ff00ff",
-  };
-
+export default function StatusBadge({ status }) {
+  const color = status === "Pending" ? "#f0ad4e" : status === "Prepared" ? "#5bc0de" : "#5cb85c";
   return (
-    <p
-      style={{
-        backgroundColor: colors[status],
-        color: "white",
-        padding: "4px 10px",
-        borderRadius: "8px",
-      }}
-    >
+    <span className="status-badge" style={{ backgroundColor: color }}>
       {status}
-    </p>
+    </span>
   );
 }
-
-export default StatusBadge;
