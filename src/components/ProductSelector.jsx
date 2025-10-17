@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function ProductSelector({ products, quantities, onQty }) {
 
+  console.log('ds')
   return (
     <div className="product-selector">
       <h4>Products</h4>
