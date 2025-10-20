@@ -1,5 +1,7 @@
 import { useState } from "react"
 import useStore from "../store/useStore"
+import toast from "react-hot-toast"
+import ConfirmToast from "../components/ConfirmToast"
 
 export default function Products() {
   const products = useStore((state) => state.products)
@@ -20,7 +22,9 @@ export default function Products() {
     e.preventDefault()
 
     if (!formData.name.trim() || !formData.price || !formData.stock) {
-      alert("Please fill in all required fields.")
+     toast('Please fill in all required fields.', {
+  icon: '❗',
+});
       return
     }
 
@@ -53,11 +57,22 @@ export default function Products() {
     })
   }
 
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this product?")) {
-      deleteProduct(id)
-    }
-  }
+  const handleDelete = (id) =>{
+            toast.custom(
+                  (t) => (
+                        <ConfirmToast
+                              toastId={t.id}
+                              message="Are you sure you want to delete this product?"
+                              onConfirm={() => deleteProduct(id)}
+                              onCancel={() => toast.dismiss(t.id)}
+                        />
+                  ),
+                  {
+                        duration: Infinity,
+                        position: "top-center",
+                  }
+            );
+      };
 
   const handleCancel = () => {
     setIsEditing(false)

@@ -1,6 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom"
 import useStore from "../store/useStore"
 import StatusBadge from "../components/StatusBadge"
+import toast from "react-hot-toast"
+import ConfirmToast from "../components/ConfirmToast"
 
 export default function OrderDetails() {
   const { id } = useParams()
@@ -25,11 +27,24 @@ export default function OrderDetails() {
   }
 
   const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this order?")) {
-      deleteOrder(order.id)
-      navigate("/orders")
-    }
-  }
+            toast.custom(
+                  (t) => (
+                        <ConfirmToast
+                              toastId={t.id}
+                              message="Are you sure you want to delete this order?"
+                              onConfirm={() => deleteOrder(order.id)}
+                              onCancel={() => toast.dismiss(t.id)}
+                        />
+                  ),
+                  {
+                        duration: Infinity,
+                        position: "top-center",
+                  }
+            );      navigate("/orders")
+
+      }; 
+    
+  
 
   const handleStatusChange = () => {
     changeOrderStatus(order.id)

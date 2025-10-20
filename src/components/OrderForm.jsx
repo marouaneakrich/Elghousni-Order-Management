@@ -1,4 +1,5 @@
 import { useState } from "react"
+import toast from "react-hot-toast"
 import ProductSelector from "./ProductSelector"
 import OrderSummary from "./OrderSummary"
 import useStore from "../store/useStore"
@@ -32,11 +33,15 @@ export default function OrderForm({ addOrder }) {
       }))
 
     if (!customerName.trim()) {
-      alert("Please enter customer name.")
+     toast('Please enter customer name.', {
+  icon: '❗',
+});
       return
     }
     if (items.length === 0) {
-      alert("Please add at least one product.")
+     toast('Please add at least one product.', {
+  icon: '❗',
+});
       return
     }
 
